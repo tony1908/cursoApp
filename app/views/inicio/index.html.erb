@@ -1,10 +1,25 @@
 <h1>Inicio</h1>
 
-<% @posts.each do |post| %>
-<p><%= post.titulo  %></p>
-<p><%= post.contenido  %></p>
-<p><%= post.imagen  %></p>
-<% end %>
+<%= will_paginate @posts %>
+<table style="width:500px">
+  <thead>
+  <tr>
+    <th>Titulo</th>
+    <th style="text-align:right;">Contenido</th>
+    <th style="text-align:right;">Imagen</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.titulo %></td>
+        <td style="text-align:right;"><%= post.contenido %></td>
+        <td style="text-align:right;"><%= post.imagen %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= will_paginate @posts %>
 
 <% if user_signed_in? %>
   <li>
