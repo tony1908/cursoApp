@@ -1,5 +1,11 @@
 <h1>Inicio</h1>
 
+<% @posts.each do |post| %>
+<p><%= post.titulo  %></p>
+<p><%= post.contenido  %></p>
+<p><%= post.imagen  %></p>
+<% end %>
+
 <% if user_signed_in? %>
   <li>
   <%= link_to('Salir', destroy_user_session_path, :method => :delete) %>        
