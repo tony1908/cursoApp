@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'inicio#index'
 
+  controller :dato do 
+    get 'usuario/perfil' => :perfil
+  end 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

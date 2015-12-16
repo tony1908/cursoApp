@@ -9,7 +9,7 @@
 <body>
 	 <%= link_to('Home', root_path)  %>
 	 <% if user_signed_in? %>
-	 <%= link_to(current_user.email, posts_path)  %>
+	 <%= link_to(current_user.email, usuario_perfil_path)  %>
 	 <%= link_to("Mis posts", posts_path)  %>
   <%= link_to('Salir', destroy_user_session_path, :method => :delete) %>       
 <% else %>

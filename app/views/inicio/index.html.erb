@@ -14,7 +14,7 @@
       <tr>
         <td><%= post.titulo %></td>
         <td style="text-align:right;"><%= post.contenido %></td>
-        <td style="text-align:right;"><%= post.user.email %></td>
+        <td style="text-align:right;"><%= post.user.nickname %></td>
         <td style="text-align:right;"><%= image_tag(post.imagen,  size: "100x100", alt: post.titulo) %></td>
       </tr>
   <% end %>
