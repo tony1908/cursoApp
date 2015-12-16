@@ -7,8 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	 <%= link_to('Home', root_path)  %> 
+	 <%= link_to('Home', root_path)  %>
+	 <% if user_signed_in? %>
+	 <%= link_to(current_user.email, posts_path)  %>
+	 <%= link_to("Mis posts", posts_path)  %>
+  <%= link_to('Salir', destroy_user_session_path, :method => :delete) %>       
+<% else %>
+  <%= link_to('Entrar', posts_path)  %>  
+<% end %>
+ 
 <%= yield %>
 
-</body>
+</body> 
 </html>
