@@ -17,7 +17,7 @@
       <tr>
         <td><%= post.titulo %></td>
         <td><%= post.contenido %></td>
-        <td><%= post.imagen %></td>
+        <td><%= image_tag(post.imagen,  size: "100x100", alt: post.titulo) %></td>
         <td><%= link_to 'Ver', post %></td>
         <td><%= link_to 'Editar', edit_post_path(post) %></td>
         <td><%= link_to 'Elminiar', post, method: :delete, data: { confirm: 'Segurox?' } %></td>
