@@ -6,7 +6,8 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     # @posts = Post.where(user_id:current_user.id)
-    @posts = current_user.posts
+    @posts1 = current_user.posts
+    @posts = @posts1.paginate(:page => params[:page], :per_page => 5)
   end
 
   # GET /posts/1

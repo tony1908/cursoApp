@@ -12,7 +12,7 @@
 
 <p>
   <strong>Imagen:</strong>
-  <%= @post.imagen %>
+  <%= image_tag(@post.imagen,  size: "100x100", alt: @post.titulo) %>
 </p>
 
 <%= link_to 'Editar', edit_post_path(@post) %> |
