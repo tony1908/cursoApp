@@ -18,9 +18,9 @@
         <td><%= post.titulo %></td>
         <td><%= post.contenido %></td>
         <td><%= image_tag(post.imagen,  size: "100x100", alt: post.titulo) %></td>
-        <td><%= link_to 'Ver', post %></td>
-        <td><%= link_to 'Editar', edit_post_path(post) %></td>
-        <td><%= link_to 'Elminiar', post, method: :delete, data: { confirm: 'Segurox?' } %></td>
+        <td><%= link_to 'Ver', post, class: "btn btn-primary" %></td>
+        <td><%= link_to 'Editar', edit_post_path(post), class: "btn btn-primary" %></td>
+        <td><%= link_to 'Elminiar', post, method: :delete, data: { confirm: 'Segurox?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,5 +29,4 @@
 <br>
 <%= will_paginate @posts %>
 <br>
-<%= link_to 'Nuevo post', new_post_path %>
-<%= link_to('Salir', destroy_user_session_path, :method => :delete) %> 
+<%= link_to 'Nuevo post', new_post_path, class: "btn btn-primary" %>

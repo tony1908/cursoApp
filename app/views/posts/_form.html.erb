@@ -9,23 +9,25 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+  <% end %> 
 
   <div class="field">
     <%= f.label :titulo %><br>
-    <%= f.text_field :titulo %>
+    <%= f.text_field :titulo, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :contenido %><br>
-    <%= f.text_area :contenido %>
+    <%= f.text_area :contenido, class: "form-control" %>
   </div>
  
   <div class="field">
    <%= f.label :imagen %>
-    <%= f.file_field :imagen %>
+    <%= f.file_field :imagen, class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="text-center">
+    <div class="actions">
+    <%= f.submit "Crear", class: "btn btn-primary" %>
+  </div>
   </div>
 <% end %>

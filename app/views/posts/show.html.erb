@@ -15,5 +15,5 @@
   <%= image_tag(@post.imagen,  size: "100x100", alt: @post.titulo) %>
 </p>
 
-<%= link_to 'Editar', edit_post_path(@post) %> |
-<%= link_to 'Atrax', posts_path %>
+<%= link_to 'Editar', edit_post_path(@post), class: "btn btn-primary" %> |
+<%= link_to 'Atrax', posts_path, class: "btn btn-primary" %>
