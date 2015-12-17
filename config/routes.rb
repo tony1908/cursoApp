@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'inicio/index'
 
-  devise_for :users
+   devise_for :users, :controllers => { registrations: 'users/registrations'}
   resources :posts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   controller :dato do 
     get 'usuario/perfil' => :perfil
+    get 'usuario/editar' => :editar
+    put 'usuario/update' => :update
   end 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
