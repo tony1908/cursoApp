@@ -47,9 +47,12 @@ before_filter :configure_account_update_params, only: [:update]
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :email, :password,
-      :password_confirmation, :current_password, :avatar, :avatar_cache) }
+      :password_confirmation, :current_password, :avatar, :avatar_cache, :nickname) }
   end
 
+  def after_update_path_for(resource)
+      :usuario_perfil
+  end
   # The path used after sign up.
   # def after_sign_up_path_for(resource)
   #   super(resource)
