@@ -36,6 +36,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to('Inicio', root_path)  %></li>
         <% if user_signed_in? %>
+        <li><%= image_tag(current_user.avatar,  size: "35x35", alt: current_user.nickname , class: "img-circle") %></li>
         <li><%= link_to(current_user.email, usuario_perfil_path)  %></li>
         <li><%= link_to("Mis posts", posts_path)  %></li>
         <li><%= link_to('Salir', destroy_user_session_path, :method => :delete) %></li>   

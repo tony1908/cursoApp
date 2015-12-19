@@ -6,5 +6,5 @@ class User < ActiveRecord::Base
 
   has_many :posts
   mount_uploader :avatar, AvatarUploader
-  validates :nickname, uniqueness: true, length: { maximum: 20 }
+  validates :nickname, uniqueness: false, length: { maximum: 20 }
 end

@@ -1,6 +1,15 @@
-<h1>Inicio</h1>
+<h1 class="text-center">Inicio</h1>
+<% @posts.each do |post| %>
+<br>
+<h3><%= post.titulo %></h4>
+<h5>Por <%= post.user.nickname %></h5>
+<div class="row">
+  <div class="col-md-4"><%= image_tag(post.imagen,  size: "250x250", alt: post.titulo, class: "img-circle") %></div>
+   <div class="col-md-8"><%= post.contenido %></div>
 
-<table style="width:500px">
+</div>
+  <% end %>
+<!-- <table style="width:500px">
   <thead>
   <tr>
     <th>Titulo</th>
@@ -19,7 +28,8 @@
       </tr>
   <% end %>
   </tbody>
-</table>
+</table> -->
 <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+
 
 
